@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fines_statistic>
+  <fines>
+    <fine type="ALCOHOL_INTOXICATION" fine_amount="6234342000.0"/>
+    <fine type="NO_DRIVING_LICENSE" fine_amount="366774000.0"/>
+    <fine type="INCORRECT_PARKING" fine_amount="256608100.0"/>
+    <fine type="RED_LIGHT" fine_amount="223837670.0"/>
+    <fine type="NO_SEAT_BELT" fine_amount="186505470.0"/>
+    <fine type="SPEEDING" fine_amount="124872820.0"/>
+  </fines>
+</fines_statistic>
