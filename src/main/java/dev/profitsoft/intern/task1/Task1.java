@@ -36,7 +36,7 @@ public class Task1 {
     public static void main(String[] args) throws IOException {
         FinesGenerator.createFineFiles(finesRootDirectory);
 
-        System.out.println("Time to process all files:");
+        System.out.println("Time to process all files (22 files x 15 MB each):");
 
         // 1 thread
         long start = System.currentTimeMillis();
@@ -62,7 +62,7 @@ public class Task1 {
         writeStatisticToXml(fineStatistic);
     }
 
-    public static List<Fine> getFineStatistic(int nThreads) {
+    private static List<Fine> getFineStatistic(int nThreads) {
         Map<FineType, BigDecimal> finesAmountByType = new HashMap<>();
         ExecutorService executorService = Executors.newFixedThreadPool(nThreads);
         Lock lock = new ReentrantLock();
@@ -106,7 +106,7 @@ public class Task1 {
         });
     }
 
-    public static File[] getFineFiles(File dir) {
+    private static File[] getFineFiles(File dir) {
         String end = "fines.json";
         return dir.listFiles(file ->
                 !file.isDirectory() && file.getName().endsWith(end));
@@ -159,7 +159,7 @@ public class Task1 {
         return fine;
     }
 
-    public static void writeStatisticToXml(List<Fine> fineStatistic) throws IOException {
+    private static void writeStatisticToXml(List<Fine> fineStatistic) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
         xmlMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
