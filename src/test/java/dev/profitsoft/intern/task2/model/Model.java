@@ -26,4 +26,6 @@ public class Model {
     @Property(name = "timeAnother")
     private Instant time;
 
+    private String skipString;
+
 }

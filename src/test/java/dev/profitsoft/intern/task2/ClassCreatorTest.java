@@ -115,4 +115,12 @@ public class ClassCreatorTest {
                 .hasMessage("Property 'name' not found in properties file for field 'strProperty'");
     }
 
+    @Test
+    public void loadFromProperties_SkipField() {
+        Model model = ClassCreator.loadFromProperties(Model.class, getPath());
+
+        assertThat(model.getSkipString())
+                .isNull();
+    }
+
 }
